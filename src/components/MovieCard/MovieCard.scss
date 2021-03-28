@@ -1,0 +1,20 @@
+.movie_card {
+  padding: 0 !important;
+  margin: 14px;
+  border-radius: 10px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
+  img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .yearInfo {
+    color: #5e5c5c;
+  }
+  .card-body {
+    .titleDiv,
+    .captionDiv {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
