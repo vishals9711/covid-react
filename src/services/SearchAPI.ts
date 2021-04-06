@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { IMovieCardProps } from '../components/MovieCard/MovieCard';
 
 export interface SearchAPIResponse {
@@ -11,14 +11,5 @@ export interface SearchAPIResponse {
 export const SearchAPI = (
   search: string
 ): Promise<AxiosResponse<SearchAPIResponse>> => {
-  const config: AxiosRequestConfig = {
-    params: {
-      api_key: '3b9a6ed72d9f555baf1e1ed7824b1314',
-      query: search,
-    },
-  };
-  return axios.get<SearchAPIResponse>(
-    'https://api.themoviedb.org/3/search/movie',
-    config
-  );
+  return axios.get<SearchAPIResponse>(`/api/v1/${search}`);
 };

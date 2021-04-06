@@ -1,4 +1,6 @@
 .movie_card {
+  color: inherit !important;
+  text-decoration: none;
   padding: 0 !important;
   margin: 14px;
   border-radius: 10px;
@@ -13,8 +15,13 @@
   .card-body {
     .titleDiv,
     .captionDiv {
+      text-align: left;
       display: flex;
       justify-content: space-between;
     }
   }
+}
+.movie_card:hover{
+  text-decoration: none !important;
+  color: inherit !important;
 }

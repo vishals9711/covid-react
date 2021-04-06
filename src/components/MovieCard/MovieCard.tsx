@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { GENRE_RESPONSE } from '../../constants/constants';
 import { returnYear } from '../../utils/utils';
 import './MovieCard.scss';
@@ -25,18 +26,21 @@ const MovieCard = (props: IMovieCardProps): React.ReactElement => {
   const baseUrl = 'https://image.tmdb.org/t/p/original/';
 
   const returnGenres = (ids: number[]): string => {
-    const array = ids.slice(0, 2);
-    let genres = '';
-    array.forEach((id, index) => {
-      const genre = GENRE_RESPONSE.find((response) => response.id === id);
-      if (genre)
-        genres += index !== array.length - 1 ? genre.name + ' | ' : genre.name;
-    });
-    return genres;
+    if (ids) {
+      const array = ids.slice(0, 2);
+      let genres = '';
+      array.forEach((id, index) => {
+        const genre = GENRE_RESPONSE.find((response) => response.id === id);
+        if (genre)
+          genres +=
+            index !== array.length - 1 ? genre.name + ' | ' : genre.name;
+      });
+      return genres;
+    } else return '';
   };
 
   return (
-    <div className="card movie_card">
+    <Link className="card movie_card" to={`/${props.id}`}>
       <img src={baseUrl + poster_path} className="card-img-top" alt={title} />
       <div className="card-body">
         <div className="titleDiv">
@@ -48,7 +52,7 @@ const MovieCard = (props: IMovieCardProps): React.ReactElement => {
           <span className="yearInfo">{returnYear(release_date)}</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

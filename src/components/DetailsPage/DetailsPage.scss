@@ -1,0 +1,79 @@
+.detailsPage {
+  height: 100%;
+  position: relative;
+  .detailsDiv {
+    height: 100%;
+    display: flex;
+    .row {
+      flex-grow: 1;
+    }
+    .detailsPageBg {
+      background-size: cover !important;
+      width: 100% !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      filter: blur(3px);
+      height: 100%;
+      .title {
+        font-size: 4rem;
+        color: white;
+      }
+      .tagLine {
+        font-size: 2rem;
+        color: white;
+        justify-content: flex-end;
+      }
+    }
+    .rightCol {
+      height: 100%;
+      padding: 1rem;
+      text-align: left;
+      .title {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .posterImg {
+        height: 100%;
+        width: 100%;
+      }
+      .ottPlatformRow {
+        margin-top: 1rem;
+        height: calc(100vh - 264px);
+        overflow-y: auto;
+        .ottPlatform {
+          font-size: 2rem;
+        }
+        .ottSection {
+          width: 100%;
+          margin-bottom: 1rem;
+          .ottHeading {
+            margin-bottom: 0.5rem;
+          }
+        }
+        .ottLogos {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          .ottIcon {
+            padding: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+  .titleDiv {
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 1px solid #f1f1f1;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
+}
