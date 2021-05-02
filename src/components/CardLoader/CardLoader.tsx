@@ -1,7 +1,6 @@
 import React from 'react';
 import Col from 'react-bootstrap/esm/Col';
 import Skeleton from 'react-loading-skeleton';
-import './CardLoader.scss';
 const CardLoader = (props: { count: number }): React.ReactElement => {
   return (
     <>

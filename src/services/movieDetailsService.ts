@@ -19,7 +19,7 @@ export interface MovieApiResponse {
   budget: number;
   genres: Array<{ id: number; name: string }>;
   homepage: string | null;
-  id: 299534;
+  id: number;
   imdb_id: string | null;
   original_language: string;
   original_title: string;
@@ -50,15 +50,14 @@ export interface MovieApiResponse {
   video: boolean;
   vote_average: number;
   vote_count: number;
-  'watch/providers': {
-    results: {
-      [key: string]: {
-        buy: Array<IProvider>;
-        flatrate: Array<IProvider>;
-        rent: Array<IProvider>;
-      };
-    };
+  'ott-details': {
+    [key: string]: Array<OTT>;
   };
+}
+
+export interface OTT {
+  platform: string;
+  url: string;
 }
 
 export const movieDetails = (

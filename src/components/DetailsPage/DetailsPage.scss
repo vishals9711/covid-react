@@ -54,8 +54,14 @@
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
-          .ottIcon {
-            padding: 0.5rem;
+          .ottAnchor {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            div {
+              margin-right: auto;
+              margin-left: auto;
+            }
           }
         }
       }
